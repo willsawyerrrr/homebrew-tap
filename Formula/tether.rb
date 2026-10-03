@@ -4,8 +4,8 @@ class Tether < Formula
   url "https://github.com/willsawyerrrr/tether/archive/refs/tags/v0.1.1.tar.gz"
   sha256 "6d778676c9a4a7cc95772e94e5a60a66fc529e3575f1eafd984a572f7b1d5a2b"
 
-  depends_on :macos
   depends_on xcode: ["15.0", :build]
+  depends_on :macos
 
   def install
     ENV["SWIFT_BUILD_FLAGS"] = "--disable-sandbox"
