@@ -1,13 +1,14 @@
 class Tether < Formula
   desc "Menu bar manager for Claude Code remote-control servers"
   homepage "https://github.com/willsawyerrrr/tether"
-  url "https://github.com/willsawyerrrr/tether/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "5b4dd484ab5a8e90fce604fe924925386e11c0762532e560ec45a445128e1ca6"
+  url "https://github.com/willsawyerrrr/tether/archive/refs/tags/v0.1.1.tar.gz"
+  sha256 "6d778676c9a4a7cc95772e94e5a60a66fc529e3575f1eafd984a572f7b1d5a2b"
 
   depends_on :macos
   depends_on xcode: ["15.0", :build]
 
   def install
+    ENV["SWIFT_BUILD_FLAGS"] = "--disable-sandbox"
     cd "macos" do
       system "scripts/build-app.sh", "build", version.to_s
       prefix.install "build/Tether.app"
