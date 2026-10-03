@@ -1,8 +1,8 @@
 class Tether < Formula
   desc "Menu bar manager for Claude Code remote-control servers"
   homepage "https://github.com/willsawyerrrr/tether"
-  url "https://github.com/willsawyerrrr/tether/archive/refs/tags/v0.1.1.tar.gz"
-  sha256 "6d778676c9a4a7cc95772e94e5a60a66fc529e3575f1eafd984a572f7b1d5a2b"
+  url "https://github.com/willsawyerrrr/tether/archive/refs/tags/v0.1.2.tar.gz"
+  sha256 "fb2605a2883a16fd95dcc4663c3894656bb214fe89891a235189a9789b7fdc7f"
 
   depends_on xcode: ["15.0", :build]
   depends_on :macos
