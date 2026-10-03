@@ -13,7 +13,10 @@ class Tether < Formula
       system "scripts/build-app.sh", "build", version.to_s
       prefix.install "build/Tether.app"
     end
-    bin.install_symlink prefix/"Tether.app/Contents/MacOS/Tether" => "tether"
+    (bin/"tether").write <<~SH
+      #!/bin/bash
+      exec open "#{opt_prefix}/Tether.app"
+    SH
     bin.install_symlink prefix/"Tether.app/Contents/MacOS/tetherctl"
   end
 
