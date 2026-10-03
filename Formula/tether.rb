@@ -13,11 +13,7 @@ class Tether < Formula
       system "scripts/build-app.sh", "build", version.to_s
       prefix.install "build/Tether.app"
     end
-    (bin/"tether").write <<~SH
-      #!/bin/bash
-      exec open "#{opt_prefix}/Tether.app"
-    SH
-    bin.install_symlink prefix/"Tether.app/Contents/MacOS/tetherctl"
+    bin.install_symlink prefix/"Tether.app/Contents/MacOS/tetherctl" => "tether"
   end
 
   service do
@@ -26,6 +22,6 @@ class Tether < Formula
   end
 
   test do
-    assert_match "Usage: tetherctl", shell_output("#{bin}/tetherctl 2>&1", 1)
+    assert_match "Usage: tether", shell_output("#{bin}/tether bogus 2>&1", 1)
   end
 end
