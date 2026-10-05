@@ -11,11 +11,13 @@ permissions:
 jobs:
   lint:
     runs-on: macos-latest
+    env:
+      HOMEBREW_GITHUB_API_TOKEN: ${{ github.token }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Tap this repository
         run: |
           mkdir -p "$(brew --repository)/Library/Taps/willsawyerrrr"
           ln -s "$GITHUB_WORKSPACE" "$(brew --repository)/Library/Taps/willsawyerrrr/homebrew-tap"
       - run: brew style willsawyerrrr/tap
-      - run: brew audit --cask --online willsawyerrrr/tap/tether
+      - run: brew audit --cask --online $(ls Casks | sed -e "s/\.rb$//" -e "s|^|willsawyerrrr/tap/|")

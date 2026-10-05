@@ -11,3 +11,4 @@ Homebrew tap. See `../CLAUDE.md` for shared conventions.
 
 - Bump `version` and `sha256` (of the release's `<App>.zip`) together; commit as `feat: Update <name> to v<version>`.
 - Validate with `brew style --fix Casks/<name>.rb` and `brew audit --cask --online <name>`.
+- CI runs the same `brew style` and `brew audit` checks on every pull request.
