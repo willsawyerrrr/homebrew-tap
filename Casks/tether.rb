@@ -1,6 +1,6 @@
 cask "tether" do
-  version "0.0.0"
-  sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+  version "0.5.0"
+  sha256 "deea16495bbf0f7efd14bfe69b126bc8c2957a495d91f95a5f5ea07fbbad441b"
 
   url "https://github.com/willsawyerrrr/tether/releases/download/v#{version}/Tether.zip"
   name "Tether"
