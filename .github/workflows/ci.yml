@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Tap this repository
+        run: |
+          mkdir -p "$(brew --repository)/Library/Taps/willsawyerrrr"
+          ln -s "$GITHUB_WORKSPACE" "$(brew --repository)/Library/Taps/willsawyerrrr/homebrew-tap"
+      - run: brew style willsawyerrrr/tap
+      - run: brew audit --cask --online willsawyerrrr/tap/tether
