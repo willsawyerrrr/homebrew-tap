@@ -12,9 +12,5 @@ cask "tether" do
   app "Tether.app"
   binary "#{appdir}/Tether.app/Contents/MacOS/tetherctl", target: "tether"
 
-  postflight_steps do
-    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Tether.app"]
-  end
-
   zap trash: "~/Library/Application Support/Tether"
 end
