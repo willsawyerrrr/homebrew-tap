@@ -20,4 +20,4 @@ jobs:
           mkdir -p "$(brew --repository)/Library/Taps/willsawyerrrr"
           ln -s "$GITHUB_WORKSPACE" "$(brew --repository)/Library/Taps/willsawyerrrr/homebrew-tap"
       - run: brew style willsawyerrrr/tap
-      - run: brew audit --cask --online $(ls Casks | sed -e "s/\.rb$//" -e "s|^|willsawyerrrr/tap/|")
+      - run: brew audit --online --tap willsawyerrrr/tap --except livecheck_version
