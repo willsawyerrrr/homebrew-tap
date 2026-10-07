@@ -21,3 +21,15 @@ jobs:
           ln -s "$GITHUB_WORKSPACE" "$(brew --repository)/Library/Taps/willsawyerrrr/homebrew-tap"
       - run: brew style willsawyerrrr/tap
       - run: brew audit --online --tap willsawyerrrr/tap --except livecheck_version
+
+  ci-status:
+    name: CI Status
+    needs: [lint]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fail if any job failed or was cancelled
+        env:
+          NEEDS: ${{ toJSON(needs) }}
+        run: |
+          echo "$NEEDS" | jq -e '[.[].result] | all(. == "success")' >/dev/null
