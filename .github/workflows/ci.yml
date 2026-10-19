@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   lint:
-    runs-on: macos-latest
+    runs-on: macos-26
     env:
       HOMEBREW_GITHUB_API_TOKEN: ${{ github.token }}
     steps:
