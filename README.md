@@ -12,3 +12,4 @@ brew install --cask <cask>
 | Cask     | Description                                       |
 | -------- | ------------------------------------------------- |
 | `tether` | Menu bar manager for Claude Code remote-control servers |
+| `nest`   | Household budgeting app for two                   |
