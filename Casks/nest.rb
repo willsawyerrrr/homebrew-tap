@@ -1,6 +1,6 @@
 cask "nest" do
-  version "0.40.1"
-  sha256 "b03f30798c113b90749dce5c36375f05180c937c9ba814034b73ad7a9eaa771c"
+  version "0.41.0"
+  sha256 "6de9add551eef42adf17240f584c9edfe00abf41123ff0c2588f2a7b9c065563"
 
   url "https://github.com/willsawyerrrr/nest/releases/download/v#{version}/Nest.zip"
   name "Nest"
