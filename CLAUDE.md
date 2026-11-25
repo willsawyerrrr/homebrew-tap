@@ -15,4 +15,4 @@ Homebrew tap. See `../CLAUDE.md` for shared conventions.
 
 ## Runtime parity
 
-The tap has no language runtime. CI runs `brew style` and `brew audit` on `macos-26`, the same macOS runner image the other repos use. Bump it with them.
+The tap has no language runtime. CI runs `brew style` and `brew audit` on `xcode-27`, the same macOS runner image the other repos use. Bump it with them.
