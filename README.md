@@ -4,6 +4,7 @@ Homebrew tap for willsawyerrrr.dev apps.
 
 ```sh
 brew tap willsawyerrrr/tap
+brew trust --tap willsawyerrrr/tap
 brew install --cask <cask>
 ```
 
