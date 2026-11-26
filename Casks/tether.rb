@@ -7,7 +7,7 @@ cask "tether" do
   desc "Menu bar manager for Claude Code remote-control servers"
   homepage "https://github.com/willsawyerrrr/tether"
 
-  depends_on macos: :ventura
+  depends_on macos: :golden_gate
 
   app "Tether.app"
   binary "#{appdir}/Tether.app/Contents/MacOS/tetherctl", target: "tether"
