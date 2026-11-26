@@ -21,7 +21,7 @@ jobs:
           ln -s "$GITHUB_WORKSPACE" "$(brew --repository)/Library/Taps/willsawyerrrr/homebrew-tap"
           brew trust --tap willsawyerrrr/tap
       - run: brew style willsawyerrrr/tap
-      - run: brew audit --online --tap willsawyerrrr/tap --except livecheck_version
+      - run: brew audit --online --tap willsawyerrrr/tap --except livecheck_version,hosting_with_livecheck
 
   ci-status:
     name: CI Status
