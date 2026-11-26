@@ -7,7 +7,7 @@ cask "nest" do
   desc "Household budgeting app for two"
   homepage "https://github.com/willsawyerrrr/nest"
 
-  depends_on macos: :sequoia
+  depends_on macos: :golden_gate
 
   app "Nest.app"
 
